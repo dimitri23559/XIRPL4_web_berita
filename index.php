@@ -1,6 +1,24 @@
+<?php
+include ("logic.php");
+
+$news = mysqli_query($conn, "SELECT * FROM data");
+
+
+
+?>
+
+ 
+
+
 <!DOCTYPE html>
 <html>
 <style>
+
+h1 {
+    color: blue;
+    text-align: center;
+}
+
 input[type=text], select {
   width: 100%;
   padding: 12px 20px;
@@ -34,26 +52,20 @@ div {
 </style>
 <body>
 
-<h3>Using CSS to style an HTML Form</h3>
+<h1>BERITA TERKINI</h1>
+
+<?php foreach( $news as $row ) : ?>
 
 <div>
   <form action="/action_page.php">
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    <h1><?= $row["title"]; ?></h1>
+    <h1><?= $row["deskripsi"];?></h1>
 
-    <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-
-    <label for="country">Country</label>
-    <select id="country" name="country">
-      <option value="australia">Australia</option>
-      <option value="canada">Canada</option>
-      <option value="usa">USA</option>
-    </select>
+    
   
-    <input type="submit" value="Submit">
+    <input type="submit" value="Read  More">
   </form>
 </div>
-
+<?php endforeach; ?>
 </body>
 </html>
