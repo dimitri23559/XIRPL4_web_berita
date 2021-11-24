@@ -29,7 +29,7 @@ input[type=text], select {
   box-sizing: border-box;
 }
 
-input[type=submit] {
+button[type=submit] {
   width: 100%;
   background-color: #4CAF50;
   color: white;
@@ -40,7 +40,7 @@ input[type=submit] {
   cursor: pointer;
 }
 
-input[type=submit]:hover {
+button[type=submit]:hover {
   background-color: #45a049;
 }
 
@@ -63,7 +63,7 @@ div {
 
     
   
-    <input type="submit" value="Read  More">
+  <button href="XIRPL4_web_berita/berita.php">more</button>
   </form>
 </div>
 <?php endforeach; ?>

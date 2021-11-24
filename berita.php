@@ -1,7 +1,16 @@
+<?php
+include ("logic.php");
+
+$news = mysqli_query($conn, "SELECT * FROM data");
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Dota2 Tournament</title>
+<title>berita harian</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -71,22 +80,24 @@ footer {
 </head>
 <body>
 <header>
-  <h2>Cities</h2>
+    <h2>Berita Harian</h2>
+
 </header>
 
-<section>
-  <nav>
-    <ul>
-      <li><a href="#">Dota1</a></li>
-      <li><a href="#">Dota2</a></li>
-      <li><a href="#">Dota3</a></li>
-    </ul>
-  </nav>
   
+
+  <?php foreach( $news as $row ) : ?>
+
+
+
+    <div>
   <article>
-    <p>swisnwisnwisnwsniwsnws</p>
+    <p><?= $row["title"]?></p>
+    <p><?= $row["content"]; ?></p>
   </article>
-</section>
+  <?php endforeach; ?>
+</div>
+
 
 <footer>
   <p>Dota2</p>
