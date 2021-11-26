@@ -56,24 +56,28 @@ div {
 
 
 
-<table  border="1" cellpadding="10" cellspacing="0" align="center">
+
+<div>
+<table  border="0" cellpadding="10 px" cellspacing="0"  align="center">
   
 
 <tr>
-  <th>judul</th>
+  <th bgcolor="#42A5F5" colspan="7">judul</th>
   <th>deskripsi</th>
+  <th>tanggal</th>
 </tr>
 <?php foreach( $news as $row ) : ?>
 <tr>
-  <td>
+  <td  bgcolor="" colspan="7">
   <a href= "news.php?id=<?=$row ["id"];?>"><?= $row["title"]; ?></a>
   </td>
 
   <td><?= $row["deskripsi"]; ?></td>
+  <td><?= $row["tanggal"]; ?></td>
 
 </tr>
 <?php endforeach; ?>
 </table>
-
+</div>
 </body>
 </html>
