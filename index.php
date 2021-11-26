@@ -15,7 +15,7 @@ $news = mysqli_query($conn, "SELECT * FROM data");
 <style>
 
 h1 {
-    color: blue;
+    color: red;
     text-align: center;
 }
 
@@ -54,18 +54,26 @@ div {
 
 <h1>BERITA TERKINI</h1>
 
-<?php foreach( $news as $row ) : ?>
 
-<div>
-  <form action="/action_page.php">
-    <h1><?= $row["title"]; ?></h1>
-    <h1><?= $row["deskripsi"];?></h1>
 
-    
+<table  border="1" cellpadding="10" cellspacing="0" align="center">
   
-  <button href="XIRPL4_web_berita/berita.php">more</button>
-  </form>
-</div>
+
+<tr>
+  <th>judul</th>
+  <th>deskripsi</th>
+</tr>
+<?php foreach( $news as $row ) : ?>
+<tr>
+  <td>
+  <a href= "news.php?id=<?=$row ["id"];?>"><?= $row["title"]; ?></a>
+  </td>
+
+  <td><?= $row["deskripsi"]; ?></td>
+
+</tr>
 <?php endforeach; ?>
+</table>
+
 </body>
 </html>

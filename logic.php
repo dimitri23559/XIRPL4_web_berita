@@ -11,4 +11,14 @@ function query($query) {
 	return $rows;
 }
 
+function cek($data){
+global $conn;
+	
+		
+		//ambil data dari tiap elemen dalam form
+		$id_jurusan = ($data["id_jurusan"]);
+		$nis   = ($data["nis"]);
+}
+
+
 ?>
